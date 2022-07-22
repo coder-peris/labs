@@ -1,0 +1,12 @@
+clc;
+close all;
+clear all;
+a=5;
+f=3;
+t=0:0.01:1;
+x=a*cos(2*pi*f*t);
+stem(t,x);
+xlabel('time');
+ylabel('amplitude');
+title('Cosine-wave(discrete)/Peris/54');
+grid on;
