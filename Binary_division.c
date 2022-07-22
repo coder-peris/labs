@@ -56,6 +56,7 @@ main()
             Q = Q * 10 + 1;
     }
     A %= x;
-    printf("The quotient is : %d", Q);
-    printf("\nAnd, the remainder is : %d\n", A);
+    printf("\nThe quotient is : %d", Q);
+    printf("\nAnd, the remainder is : %d", A);
+    system("pause>0");
 }
