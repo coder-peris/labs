@@ -20,7 +20,7 @@ long add(long n1, long n2)
 main()
 {
     int i = 0, n = 0, rem, An;
-    long M, Q, A, x, y, onec = 0, twoc, shi;
+    long M, Q, A = 0, x, y, onec = 0, twoc, shi;
     system("cls");
     printf("Enter dividend : ");
     scanf("%ld", &Q);
@@ -37,9 +37,8 @@ main()
         x /= 10;
     }
     twoc = add(onec, 1);
-    x = pow(10, (n + 1));
-    y = pow(10, (n - 1));
-    A = 0;
+    x = pow(10, n + 1);
+    y = pow(10, n - 1);
     for (i = n; i > 0; i--)
     {
         shi = Q / y;
