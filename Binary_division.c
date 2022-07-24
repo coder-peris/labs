@@ -17,7 +17,7 @@ add(int n1, int n2)
 }
 main()
 {
-    int i = 0, n = 0, rem, An, M, Q, A = 0, x, y, onec = 0, twoc, shi;
+    int i = 0, n = 0, An, M, Q, A = 0, onec = 0, twoc, shi, x, y;
     system("cls");
     printf("Enter dividend : ");
     scanf("%d", &Q);
@@ -27,10 +27,10 @@ main()
         n++;
     for (x = M; i <= n; i++)
     {
-        rem = 0;
+        y = 0;
         if (x % 10 == 0)
-            rem = 1;
-        onec += rem * pow(10, i);
+            y = 1;
+        onec += y * pow(10, i);
         x /= 10;
     }
     twoc = add(onec, 1);
