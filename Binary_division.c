@@ -1,31 +1,28 @@
 #include <stdio.h>
 #include <math.h>
-long add(long n1, long n2)
+add(int n1, int n2)
 {
-    int i = -1, carry = 0, s[10];
-    long sum = 0;
-    while (n1 != 0 || n2 != 0)
+    int i, carry = 0, temp, sum = 0;
+    for (i = 0; n1 != 0 || n2 != 0; i++)
     {
-        s[++i] = (n1 % 10 + n2 % 10 + carry) % 2;
+        temp = (n1 % 10 + n2 % 10 + carry) % 2;
         carry = (n1 % 10 + n2 % 10 + carry) / 2;
         n1 /= 10;
         n2 /= 10;
+        sum += temp * pow(10, i);
     }
     if (carry == 1)
-        s[++i] = 1;
-    for (; i >= 0; i--)
-        sum += s[i] * pow(10, i);
+        sum += pow(10, i);
     return sum;
 }
 main()
 {
-    int i = 0, n = 0, rem, An;
-    long M, Q, A = 0, x, y, onec = 0, twoc, shi;
+    int i = 0, n = 0, rem, An, M, Q, A = 0, x, y, onec = 0, twoc, shi;
     system("cls");
     printf("Enter dividend : ");
-    scanf("%ld", &Q);
+    scanf("%d", &Q);
     printf("Enter divisor : ");
-    scanf("%ld", &M);
+    scanf("%d", &M);
     for (x = Q; x > 0; x /= 10)
         n++;
     for (x = M; i <= n; i++)
@@ -55,7 +52,7 @@ main()
             Q = Q * 10 + 1;
     }
     A %= x;
-    printf("\nThe quotient is : %ld", Q);
-    printf("\nAnd, the remainder is : %ld", A);
+    printf("\nThe quotient is : %d", Q);
+    printf("\nAnd, the remainder is : %d", A);
     system("pause>0");
 }
