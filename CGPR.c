@@ -1,5 +1,4 @@
-/* Program to display actual time in analog clock */
-
+/* C program to display actual time in graphics mode */
 #include <graphics.h>
 #include <math.h>
 #include <time.h>
@@ -44,14 +43,14 @@ clockLayout()
 }
 main()
 {
-    int gd = DETECT, gm, i, j, flag = 1;
+    int gd = DETECT, gm;
     float sec, min, hr;
     time_t p = time(0);
     struct tm *t = localtime(&p);
     hr = t->tm_hour;
     min = t->tm_min;
     sec = t->tm_sec;
-    initgraph(&gd, &gm, "C:\\TC\\BGI");
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
     do
     {
         if (sec == 60)
@@ -60,21 +59,17 @@ main()
             min = 0;
         if (hr > 12)
             hr -= 12;
-        cleardevice();
         clockLayout();
         secminHand(sec, 150);
         secminHand(min, 110);
         hrHand(hr, min);
+        sec++;
+        min += 1 / 60;
+        hr += 1 / 3600;
         delay(1000);
         if (kbhit())
-        {
-            flag = 0;
             break;
-        }
-        sec++;
-        min = (min + 1 / 60);
-        hr = (hr + 1 / 3600);
-    } while (flag);
+    } while (1);
     system("pause>NiteshPrabhasPranesh");
     closegraph();
 }
