@@ -26,5 +26,5 @@ subplot(313);
 plot(t,mod);
 xlabel('time');
 ylabel('amplitude');
-title('Amplitude-modulation/Peris/54');
+title('Amplitude modulation/Peris/54');
 grid on;
