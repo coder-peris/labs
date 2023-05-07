@@ -7,24 +7,19 @@ int main()
     scanf("%d %d", &n1, &n2);
     while (n1 != 0 || n2 != 0)
     {
-        i++;
-        sum[i] = (n1 % 10 + n2 % 10 + carry) % 2;
+        sum[++i] = (n1 % 10 + n2 % 10 + carry) % 2;
         carry = (n1 % 10 + n2 % 10 + carry) / 2;
         n1 /= 10;
         n2 /= 10;
     }
-    if (carry == 1)
-    {
-        i++;
-        sum[i] = carry;
-    }
+    sum[++i] = carry;
     printf("The sum of two binary numbers is : ");
-    for (; i >= 0; i--)
-        printf("%d", sum[i]);
+    while (i >= 0)
+        printf("%d", sum[i--]);
     system("pause>0");
 }
 
-/* Alternate and shortest in world: */
+/* Alternate : */
 #include <stdio.h>
 #include <math.h>
 int main()
