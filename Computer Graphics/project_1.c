@@ -1,4 +1,4 @@
-/* C program to display actual time in graphics mode */
+/* C program to display actual time in analog clock in graphics mode */
 #include <graphics.h>
 #include <math.h>
 #include <time.h>

@@ -5,7 +5,7 @@ main()
 {
     int gd = DETECT, gm;
     float xc, yc, rx, ry, x, y, pk;
-    system("cls");  //This line is for Windows-uers only.
+    system("cls");  
     printf("Enter coordinates of centre of ellipse : ");
     scanf("%f %f", &xc, &yc);
     printf("Enter x-radius and y-radius : ");
