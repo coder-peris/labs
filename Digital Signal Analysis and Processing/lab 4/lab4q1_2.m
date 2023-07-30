@@ -1,0 +1,18 @@
+clc;
+clear all;
+close all;
+b= [1 .1];
+a= [1 .2 9 .01];
+[bz,az]= bilinear(b,a,2);
+freqs(bz,az);
+title('frequency response by bilinear transformation/54');
+figure;
+dimpulse(bz,az);
+title('impulse response plot in z- domain/54');
+figure;
+sys=tf(b,a);
+step(sys);
+title('step response plot of LTI system/54');
+figure;
+dstep(bz,az);
+title('step response plot for discrete time linear system/54');
